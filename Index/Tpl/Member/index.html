@@ -1,0 +1,80 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/member.css" />
+</head>
+<body>
+	<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+<!--------------------中部-------------------->
+	<div id='center'>
+<!-- 左侧 -->
+	<load file="./Index/Tpl/Common/left.html">
+<!-- 左侧结束 -->
+		<div id='right'>
+	
+			<p class='title'>{$rank}的首页</p>
+
+			<ul class='property'>
+				<li>金币：<span>{$member.point}</span></li>
+				<li>经验值：<span>{$member.exp}</span></li>
+				<li>采纳率：<span>{$member.ratio}%</span></li>
+			</ul>
+			<div class='list'>
+				<p><span>{$rank}的提问 <b>(共{$member.ask}条)</b></span><a href="{|U('Member/my_ask',array('uid'=>$_GET['uid']))}">更多>></a></p>
+				<table>
+				<if value="$member['ask'] eq 0">
+						<tr height='140'>
+							<td>你还没有进行过提问</td>
+						</tr>
+				<else/>
+						<tr>
+							<th class='t1'>标题</th>
+							<th>回答数</th>
+							<th class='t3'>更新时间</th>
+						</tr>
+					<list from="$ask" name="n">
+						<tr>
+							<td class='t1'>
+								<a href="{|U('Show/index',array('asid'=>$n['asid'],'cid'=>$n['cid']))}">{$n.content}</a><span>[{$n.title}]</span>
+							</td>
+							<td>{$n.answer}</td>
+							<td class='t3'>{$n.time|date:'Y-m-d',@@}</td>
+						</tr>
+					</list>
+				</if>
+				</table>
+			</div>
+			<div class='list'>
+				<p><span>{$rank}的回答 <b>(共{$member.answer}条)</b></span><a href="">更多>></a></p>
+				<table>
+				<if value="$member['answer'] eq 0">
+					<tr height='140'>
+						<td>你还没有进行过回答</td>
+					</tr>
+				<else/>
+					<tr>
+						<th class='t1'>标题</th>
+						<th>回答</th>
+						<th class='t3'>更新时间</th>
+					</tr>
+				<list from="$answer" name="n">
+					<tr>
+						<td class='t1'>
+							<a href="{|U('Member/my_ask',array('uid'=>$_GET['uid']))}">{$n.content}</a><span>[{$n.title}]</span>
+						</td>
+						<td>{$n.answer}</td>
+						<td class='t3'>{$n.time|date:'Y-m-d',@@}</td>
+					</tr>
+				</list>
+				</if>
+				</table>
+			</div>
+		</div>
+	</div>
+<!--------------------中部结束-------------------->
+
+<!--------------------底部-------------------->
+<!-- 底部 -->
+	<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

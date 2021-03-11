@@ -1,0 +1,344 @@
+
+/********************左侧********************/
+#left{
+	width: 180px;
+	height: auto;
+	float: left;
+	color: #333333;
+    font: 12px/1.5 arial,helvetica,sans-serif;
+    text-align: left;
+}
+#left .left-title {
+	background: url(../Images/back.png) no-repeat -540px -78px #FDFDFD;
+    border : 1px solid #D5D5D5;
+    border-bottom: none;
+    padding: 6px 10px 5px;
+    color: #666666;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: 400;
+}
+#left .left-list a {
+	color: #333333;
+	_font-size:11px;
+}
+#left .left-list .list-l1 {
+	background: url(../Images/right.png) no-repeat 164px 35px;
+	height: auto;
+    position: relative;
+    margin-top: 0px;
+    _z-index: 10;
+    +z-index: 10;
+}
+#left .left-list .list-l1 .list-l1-wrap {
+	border: 1px solid #E0E0E0;
+    padding: 8px 3px 8px 10px;
+    /*position: relative;*/
+    _height: 40px;
+    margin-top: -1px;
+    _margin-bottom: -4px;
+    z-index: 9;
+  
+}
+#left .left-list .list-l1 .list-l1-wrap h4 {
+	font-size: 12px;
+}
+#left .left-list .list-l1 .list-cur {
+	border: 1px solid #3EAF0E;
+	border-right: #fff;
+	background: #fff;
+	_margin-bottom: -18px;
+	position: relative;
+	 z-index: 11;
+
+}
+#left .left-list .list-l2 {
+	height: auto;
+	overflow: hidden;
+	padding-top: 5px;
+}
+#left .left-list .list-l2 li {
+	float: left;
+	padding-right: 5px;
+	height: 20px;
+	line-height: 20px;
+}
+#left .left-list .list-l1 .list-more {
+	position: absolute;
+	border: 1px solid #3EAF0E;
+	top: 0px;
+	left: 179px;
+	width: 230px;
+	height: auto;
+	padding:26px 0px 20px 20px;
+	background : #fff;
+	z-index: 1;
+}
+#left .left-list .list-l1 .list-more ul li {
+	float: left;
+	margin: 5px;
+	white-space: nowrap;
+
+}
+#left .left-list .list-l1 .list-more ul li a{
+	display:inline-block;
+	padding : 1px 4px;
+	_padding : 1px 2px;
+	text-decoration: none;
+	float: left;
+}
+#left .left-list .list-l1 .list-more ul li a:hover {
+	background: #3EAF0E;
+	color: #fff;
+}
+
+/********************中部********************/
+#center {
+	width: 560px;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	margin-left: 10px;
+}
+#animate {
+	width: 558px;
+	height: 223px;
+	overflow: hidden;
+	border: 1px solid #e0e0e0;
+}
+#animate .imgs-wrap {
+	width: 558px;
+	height: 190px;
+	position: relative;
+	overflow: hidden;
+}
+#animate .imgs-wrap ul {
+	left: 0px;
+	width: 1674px;
+	height: 190px;
+	position: absolute;
+}
+#animate .imgs-wrap ul li {
+	float: left;
+	width: 558px;
+	height: 190px;
+}
+#animate .ani-btn {
+	width :558px;
+	height: 32px;
+	border-top: 1px solid #e0e0e0;
+}
+#animate .ani-btn li {
+	width: 185px;
+	height: 24px;
+	/*line-height: 32px;*/
+	float: left;
+	border-right: 1px solid #e0e0e0;
+	color: #0063c8;
+	cursor: default;
+	position: relative;
+	padding-top: 8px;
+}
+#animate .ani-btn .ani-btn-cur {
+	background: #69b2fc;
+	color: #fff;
+}
+#animate .ani-btn .ani-btn-cur i {
+	display: block;
+	width: 9px;
+	height: 5px;
+	background: url(../Images/back.png) no-repeat -623px -127px;
+	position: absolute;
+	z-index: 1;
+	top: -5px;
+	left: 89px;
+}
+
+/**********问题列表**********/
+#center .answer-list {
+	width: 560px;
+	height: auto;
+	overflow: hidden;
+	margin: 20px 0;
+	text-align: left;
+}
+#center .answer-list dt {
+	width: 560px;
+	height: 24px;
+	border-bottom: 1px solid #ededed;
+}
+#center .answer-list dt span {
+	display: block;
+	/*width: 120px;*/
+	padding-right: 20px;
+	height: 24px;
+	border-bottom: 1px solid #3EAF0E;
+	margin-bottom: -1px;
+    color: #666666;
+    float: left;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    font-weight: 400;
+    background: url(../Images/back.png) no-repeat;
+    text-indent: 35px;
+}
+#center .answer-list dt .wait-as {
+	background-position: -954px -302px;
+}
+#center .answer-list dt .reward-as {
+	background-position: -954px -345px;
+}
+#center .answer-list dt a {
+	display: block;
+	height: 24px;
+	line-height: 24px;
+	float: right;
+	text-decoration: none;
+	margin-right: 10px;
+	color: #0063C8;
+	font-family: SimSun;
+}
+#center .answer-list dd {
+	width: 560px;
+	height: 28px;
+	line-height: 28px;
+	text-indent: 20px;
+	background: url(../Images/point.png) no-repeat 10px 13px;
+	margin: 5px 0;
+}
+#center .answer-list dd a {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	float: left;
+}
+#center .answer-list dd a b {
+	font-size: 12px;
+	color: #ff6600;
+	display: inline-block;
+    width: 24px;
+    height: 28px;
+    line-height: 28px;
+    background: url(../Images/back.png) no-repeat -540px -45px;
+    padding: 0 5px;
+    text-indent: 0;
+    text-align: right;
+    font-weight: normal;
+}
+#center .answer-list dd span {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	float: right;
+	color: #88888d;
+	margin-right: 20px;
+}
+/*搜索内容区域*/
+.search_top{
+	height: 35px;
+	border-bottom: 1px solid #ddd;
+}
+.search_top a{
+	font-weight: 700;
+}
+.search_top .sealeft{
+	float: left;
+}
+.search_top .sealeft a{
+	float: left;
+	line-height: 35px;
+	margin-left: 5px;
+}
+.search_top .sealeft a img{
+	margin-top: 5px;
+}
+.search_top .searight{
+	float: right;
+}
+.search_top .searight a{
+	float: left;
+	line-height: 35px;
+	margin-right: 10px;
+}
+.search_box{
+	margin-top: 20px;
+	overflow: hidden;
+}
+.search_box input{
+	float: left;
+	width: 93px;
+	height: 30px;
+	border: 1px solid #999;
+	margin-left: 5px;
+	font-size: 14px;
+	color: #000;
+}
+.search_box .searchInput{
+	width: 536px;
+	height: 28px;
+	margin-left: 20px;
+}
+.search_box .sub{
+	cursor: pointer;
+}
+.search_box a{
+	width: 93px;
+	height: 28px;
+	display: block;
+	float: left;
+	background: #F0F0F0;
+	border: 1px solid #999;
+	line-height: 30px;
+	margin-left: 5px;
+	font-size: 14px;
+	color: #000;
+}
+.search_box a:hover{
+	text-decoration: none;
+}
+/*内容区域*/
+.searcont{
+	width: 730px;
+	float: left;
+	height: auto;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-bottom: 70px;
+}
+.searcont ul{
+	margin-top: 20px;
+}
+.searcont ul li{
+	text-align: left;
+	margin-top: 5px;
+	line-height: 30px;
+	font-size: 13px;
+}
+.searcont ul li a.title{
+	font-size: 16px;
+	color: blue;
+	text-decoration: underline;
+}
+.searcont ul li span{
+	color: green;
+}
+.searcont ul li.time{
+	color: #999;
+}
+.searpage{
+	float: left;
+	margin-top: 50px;
+	width: 650px;
+	padding-left: 250px;
+	margin-bottom: 50px;
+}
+.searpage a{
+	width: 24px;
+	height: 25px;
+	display: block;
+	float: left;
+	border: 1px solid #CCCCCC;
+	margin-left: 5px;
+	line-height: 28px;
+}

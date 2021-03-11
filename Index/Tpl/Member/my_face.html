@@ -1,0 +1,32 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/member.css" />
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/face.css">
+
+</head>
+<body>
+	<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+<!--中部-->
+	<div id='center'>
+<!-- 左侧 -->
+<load file="./Index/Tpl/Common/left.html">
+<!-- 左侧结束 -->
+		<div id='right'>
+			<p class='title'>头像上传</p>
+			<ul class='ask-filter'>
+			</ul>
+			<div class='imgface_box'>
+				<img src="{$face}" id="preview">
+				<form action="{|U('my_face', array('uid'=>$_GET['uid']))}" enctype="multipart/form-data" method="POST">
+					<input type="file" name="face" id="face" >
+					<input type="submit" value="上传头像" id="sub">
+				</form>
+				<p>支持JPG、PNG、GIF图片类型，不能大于5M。推荐尺寸：180PX*180PX</p>
+			</div>
+		</div>
+	</div>
+<!-- 底部 -->
+<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

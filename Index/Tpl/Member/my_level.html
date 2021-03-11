@@ -1,0 +1,71 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/member.css" />
+	<script type="text/javascript" src='./Index/Tpl/Public/Js/member.js'></script>
+</head>
+<body>
+	<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+<!--------------------中部-------------------->
+	<div id='center'>
+<!-- 左侧 -->
+<load file="./Index/Tpl/Common/left.html">
+<!-- 左侧结束 -->
+
+		<div id='right'>
+			<p class='title'>我的的等级</p>
+			<p class='lv-info'>恭喜您，已经升到 <span>Lv{$level}</span> 级啦，距下一级还需 <span>{$nextExp}</span> 经验值!</p>
+			<div class='lv-rule'>
+				<p><span>等级规则</span></p>
+				<table class='lv-exp'>
+					<tr>
+						<th>等级</th>
+						<th>经验值</th>
+					</tr>
+					<foreach from="$levelExp" key="$k" value="$n">
+						<if value="$level eq $k">
+							<tr class="cur">
+								<td >我的现在<span>{$k}</span>级</td>
+								<td><span>{$exp}</span></td>
+							</tr>
+						<else/>
+							<tr>
+								<td>{$k}</td>
+								<td>{$n}</td>
+							</tr>
+						</if>
+					</foreach>
+				</table>
+			</div>
+			<div class='lv-rule'>
+				<p><span>经验获取规则</span></p>
+				<table class='lv-exp'>
+					<tr>
+						<th>操作</th>
+						<th>获得经验值</th>
+					</tr>
+					<tr>
+						<td>每天登录</td>
+						<td>{|C('LV_LOGIN')}</td>
+					</tr>
+					<tr>
+						<td>提问</td>
+						<td>{|C('LV_ASK')}</td>
+					</tr>
+					<tr>
+						<td>回答</td>
+						<td>{|C('LV_ANSWER')}</td>
+					</tr>
+					<tr>
+						<td>采纳与被采纳</td>
+						<td>{|C('LV_ACCEPT')}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+<!--------------------中部结束-------------------->
+<!-- 底部 -->
+<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

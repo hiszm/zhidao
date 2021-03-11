@@ -1,0 +1,88 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="__PUBLIC__/Css/list.css" />
+</head>
+<body>
+<!-- top -->
+<load file="./Index/Tpl/Common/top.html">
+<!-- top 结束-->
+
+	<div id='location'>
+		<a href="{|U('index', array('cid'=>0))}">全部分类</a>
+			<list from="$fatherCate" name="n">
+				<if value="!$hd.list.n.last">
+			&gt;&nbsp;<a href="{|U('index', array('cid'=>$n['cid']))}">{$n.title}</a>&nbsp;&nbsp;
+				<else/>
+			&gt;&nbsp;{$n.title}&nbsp;&nbsp;
+				</if>
+			</list>
+	</div>
+
+<!--------------------中部-------------------->
+	<div id='center'>
+		<div id='left'>
+			<div id='cate-list'>
+				<p class='title'>按分类查找</p>
+				<ul>
+					<list from="$sonCate" name="n">
+						<li>
+							<a href="{|U('index', array('cid'=>$n['cid']))}">{$n.title}</a>
+						</li>
+					</list>
+				</ul>
+			</div>
+			<div id='answer-list'>
+				<ul class='ans-sel'>
+
+					<li <if value="{$hd.get.where} eq 0">class='on'</if>>
+						<a href="{|U('index', array('where'=>0, 'cid'=>$_GET['cid']))}">待解决问题</a>
+					</li>
+					<li <if value="{$hd.get.where} eq 1">class='on'</if>>
+						<a href="{|U('index', array('where'=>1, 'cid'=>$_GET['cid']))}">已解决</a>
+					</li>
+					<li <if value="{$hd.get.where} eq 2">class='on'</if>>
+						<a href="{|U('index', array('where'=>2, 'cid'=>$_GET['cid']))}">高悬赏</a>
+					</li>
+					<li <if value="{$hd.get.where} eq 3">class='on'</if>>
+						<a href="{|U('index', array('where'=>3, 'cid'=>$_GET['cid']))}">零回答</a>
+					</li>
+
+				</ul>
+				<!-- 待解决问题 -->
+				<table>
+					<tr>
+						<th class='t1'>标题</th>
+						<th>回答数</th>
+						<th>时间</th>
+					</tr>
+					<list from="$ask" name="n">
+						<tr>
+							<td class='t1 cons'>
+								<a href="{|U('Show/index', array('asid'=>$n['asid'],'cid'=>$n['cid']))}">
+									<b>{$n.reward}</b>{$n.content}</a>&nbsp;&nbsp;[{$n.title}]
+							</td>
+							<td>{$n.answer}</td>
+							<td>{$n.time|date:"Y-m-d", @@}</td>
+						</tr>
+					</list>
+						
+
+					<tr class='page'>
+						<td colspan='3'>
+							{$page}
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+
+<!-- 右侧 -->
+<load file="./Index/Tpl/Common/right.html">
+<!-- ---右侧结束---- -->
+	</div>
+<!--------------------中部结束-------------------->
+
+<!-- 底部 -->
+<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

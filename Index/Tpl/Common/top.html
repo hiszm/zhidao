@@ -1,0 +1,138 @@
+	<div id='top-fixed'>
+	<div id='top-bar'> 
+		<ul class="top-bar-left fl">
+			
+			<li><a href="http://moyushi.cn" target='_blank'>摸鱼师</a></li>
+		</ul>
+		<ul class='top-bar-right fr'>
+
+			<if value="isset($_SESSION['username']) && isset($_SESSION['uid'])">
+
+				<li class='userinfo'>
+					<a href="{|U('Member/index',array('uid'=>$_SESSION['uid']))}" class='uname'>{$hd.session.username}</a>
+				</li>
+				<li style='color:#eaeaf1'>|</li>
+				<li><a href="{|U('Login/out')}">退出</a></li>
+			<else/>
+
+
+				<li><a href="" class='login'>登录</a></li>
+				<li style='color:#eaeaf1'>|</li>
+				<li><a href="" class='register'>注册</a></li>	
+
+			</if>
+
+		</ul>
+	</div>
+<!-- 提问搜索框 -->
+	<div id='search'>
+		<div class='logo'><a href="./index.php" class='logo'></a></div>
+		<form action="{|U('Index/search')}" method='POST'>
+			<input type="text" name='search' class='sech-cons'/>
+			<input type="submit" class='sech-btn'/>
+		</form>
+		<a href="{|U('Ask/ask')}" class='ask-btn'></a>
+	</div>
+<!-- 提问搜索框结束 -->
+</div>
+<div style='height:110px'></div>
+<!----------导航条---------->
+<div id='nav'>
+	<ul class='list'>
+		<li class='nav-sel'><a href="./index.php" class='home'>问答首页</a></li>
+		<li class='nav-sel ask-cate'>
+			<a href="" class='ask-list'><span>问题库</span><i></i></a>
+			<ul class='hidden'>
+			<list from="$topCate" name="n">
+				<li>
+					<a href="{|U('List/index',array('cid'=>$n['cid']))}">{$n.title}</a>
+				</li>
+			</list>
+			</ul>
+		</li>
+	</ul>
+	<p class='total'>累计提问：{$askNum}</p>
+</div>
+
+	<!----------注册框---------->
+	<div id='register' class='hidden'>
+		<div class='reg-title'>
+			<p>欢迎注册认识</p>
+			<a href="" title='关闭' class='close-window'></a>
+		</div>
+		<div id='reg-wrap'>
+			<div class='reg-left'>
+				<ul>
+					<li><span>账号注册</span></li>
+				</ul>
+				<div class='reg-l-bottom'>
+					已有账号，<a href="" id='login-now'>马上登录</a>
+				</div>
+			</div>
+			<div class='reg-right'>
+				<form action="{|U('Reg/register')}" method='post' name='register'>
+					<ul>
+						<li>
+							<label for="reg-uname">用户名</label>
+							<input type="text" name='username' id='reg-uname'/>
+							<span>2-14个字符：字母、数字或中文</span>
+						</li>
+						<li>
+							<label for="reg-pwd">密码</label>
+							<input type="password" name='pwd' id='reg-pwd'/>
+							<span>6-20个字符:字母、数字或下划线 _</span>
+						</li>
+						<li>
+							<label for="reg-pwded">确认密码</label>
+							<input type="password" name='pwded' id='reg-pwded'/>
+							<span>请再次输入密码</span>
+						</li>
+						<li>
+							<label for="reg-verify">验证码</label>
+							<input type="text" name='verify' id='reg-verify'/>
+							<img src="{|U('Reg/code')}" width='99' height='35' alt="验证码" id='verify-img'/>
+							<span>请输入图中的字母或数字，不区分大小写</span>
+						</li>
+						<li class='submit'>
+							<input type="submit" value='立即注册'/>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!----------登录框---------->	
+	<div id='login' class='hidden'>
+		<div class='login-title'>
+			<p>欢迎您登录认识</p>
+			<a href="" title='关闭' class='close-window'></a>
+		</div>
+		<div class='login-form'>
+			<span id='login-msg'></span>
+			<!-- 登录FORM -->
+			<form action="{|U('Login/login')}" method='post' name='login'>
+				<ul>
+					<li>
+						<label for="login-acc">账号</label>
+						<input type="text" name='username' class='input' id='login-acc'/>
+					</li>
+					<li>
+						<label for="login-pwd">密码</label>
+						<input type="password" name='pwd' class='input' id='login-pwd'/>
+					</li>
+					<li class='login-auto'>
+						<label for="auto-login">
+							<input type="checkbox" checked='checked' name='auto'  id='auto-login'/>&nbsp;下一次自动登录
+						</label>
+						<a href="" id='regis-now'>注册新账号</a>
+					</li>
+					<li>
+						<input type="submit" value='' id='login-btn'/>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+
+<!--背景遮罩--><div id='background' class='hidden'></div>

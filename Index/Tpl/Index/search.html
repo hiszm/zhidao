@@ -1,0 +1,47 @@
+	<load file="./Index/Tpl/Common/head.html">
+	
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/index.css" />
+	<style type="text/css">
+		.search_top{
+			height: 56px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 搜索顶部 -->
+	<div class="search_top">
+		<div class="sealeft">
+			<a href="./index.php"><img src="./Index/Tpl/Public/images/t0150f9b7bd1b41d84e.png" alt="" /></a>
+			<!-- <a href="http://www.houdunwang.com">I_know</a>
+			<a href="http://www.houdunwang.com">hi</a> -->
+		</div>
+
+	</div>
+	<!-- 搜索顶部结束 -->
+	<!-- 搜索框 -->
+	<div class="search_box">
+		<form action="{|U('Index/search')}" method="POST">
+			<input type="text" name="search" class="searchInput"/>
+			<input type="submit" value="搜索答案" class="sub"/>
+			<a href="{|U('Ask/ask')}">我要提问</a>
+		</form>
+	</div>
+	<!-- 搜索框结束 -->
+	<!-- 搜索内容 -->
+	<if value="!empty($search)">
+		<list from="$search" name="n">
+			<div class="searcont">
+				<ul>
+					<li> <a href="{|U('Show/index',array('asid'=>$n['asid'],'cid'=>$n['cid']))}" class="title">{$n.content}</a> </li>
+					<li>{$n.answerCon}</li>
+					<li class="time"><span>{$n.title} - {$n.answer}个回答</span> - 提问时间: {$n.time|date:'Y-m-d',@@}</li>
+				</ul>
+			</div>
+		</list>
+	</if>
+
+	<!-- 搜索内容结束 -->
+
+<!-- 底部 -->
+		<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

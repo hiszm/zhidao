@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	<link rel="stylesheet" href="./Admin/Tpl/Public/Css/public.css" />
+	<script type="text/javascript" src="./Admin/Tpl/Public/Js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./Admin/Tpl/Public/Js/public.js"></script>
+	<script type="text/javascript" src="./Admin/Tpl/Public/Js/category.js"></script>
+</head>
+
+<body>
+	<table class="table">
+		<tr pid=0>
+			<td class="th" colspan="20">分类列表</td>
+		</tr>
+		<tr pid=0 class="tableTop">
+			<td class="tdLittle0 center">展开</td>
+			<td class="tdLittle1">ID</td>
+			<td>分类名称</td>
+			<td class="tdLtitle7">操作</td>
+		</tr>
+		<list from="$cate" name="n">
+			<tr cid="{$n.cid}" pid="{$n.pid}">
+				<td><a href="javascript:void(0)" class="showPlus"></a></td>
+				<td>{$n.cid}</td>
+				<td>{$n.html}{$n.title}</td>
+				
+				<td>
+					[<a href="{|U('add_cate', array('cid'=>$n['cid']))}">添加子分类</a>][
+					<a href="{|U('edit_cate', array('cid'=>$n['cid']))}">修改</a>][
+					<a href="{|U('del_cate', array('cid'=>$n['cid']))}" class="del">删除</a>]
+				</td>
+			</tr>
+		</list>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+#center {
+	width: 980px;
+	height: auto;
+	overflow: hidden;
+	margin: 10px auto;
+}
+/**********左侧**********/
+#left {
+    width: 220px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+#left .userinfo {
+    width: 198px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    padding: 10px;
+    border: 1px solid #f2e5aa;
+    background: #fffef1;
+    border-bottom: none;
+}
+#left .userinfo dl {
+    width: 198px;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #F2E5AA;
+    text-align: left;
+}
+#left .userinfo dl dt {
+    float: left;
+    width: 48px;
+    height: 58px;
+    margin-right: 20px;
+    padding: 5px 0;
+}
+#left .userinfo dl dd {
+    width: 128px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    font: 12px/1.5 arial,helvetica,sans-serif;
+    color: #888888;
+}
+#left .userinfo dl .username a{
+    color: #333333;
+    font-weight: 700;
+    text-decoration: none;
+}
+#left .userinfo table {
+    width: 198px;
+    height: 28px;
+    margin: 5px 0;
+}
+#left .userinfo table td {
+    text-align: center;
+    color: #888888;
+    border-right: 1px dotted #F2E5AA;
+}
+#left .userinfo table tr .last {
+    border: none;
+}
+#left .userinfo table td a {
+    color:#FF6600;
+}
+#left ul {
+	width: 220px;
+	height: auto;
+	overflow: hidden;
+	margin-top: 20px;
+	background: #fffef1;
+	border-bottom: 1px solid #f2e5aa;
+}
+#left ul li {
+	width: 218px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+	text-align: left;
+	text-indent: 4em;
+	background: url(../Images/member-icon.png) no-repeat;
+	border-left: 1px solid #f2e5aa;
+	border-right: 1px solid #f2e5aa;
+}
+#left ul .myhome {
+	background-position: 25px 10px;
+}
+#left ul .myask {
+	background-position: 25px -30px;
+}
+#left ul .myanswer {
+	background-position: 25px -64px;
+}
+#left ul .mylevel {
+	background-position: 25px -98px;
+}
+#left ul .mygold {
+	background-position: 25px -135px;
+}
+#left ul .myface {
+	background: url("../Images/faceImg.jpg") no-repeat 25px 9px;
+
+}
+#left ul .cur {
+	width : 219px;
+	height: 34px;
+	line-height: 34px;
+	border-right: none;
+	background-color: #fff;
+	border-top: 1px solid #f2e5aa;
+	border-bottom: 1px solid #f2e5aa;
+}
+#left ul .cur a{
+	color: #4BB20E;
+}
+#left ul li a{
+	color: #333333;
+}
+
+/**********右侧**********/
+#right {
+    width: 710px;
+    height: auto;
+    overflow: hidden;
+    float: right;
+    background: url(../Images/member-bg.png) no-repeat;
+    padding: 10px 20px;
+    text-align: left;
+}
+#right .title {
+    width: 710px;
+    height: 30px;
+    line-height: 30px;
+    color: #333333;
+    font: 14px/1.5 '微软雅黑';
+}
+#right .property {
+    width: 710px;
+    height: 30px;
+}
+#right .property li {
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    width:150px;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+#right .property li span {
+    color: #FF6600;
+    font-weight: bold;
+}
+#right .list {
+    width: 710px;
+    height: auto;
+    overflow: hidden;
+    margin: 20px 0;
+    padding-bottom: 20px;
+}
+#right .list p{
+    width: 710px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #EDEDED;
+}
+#right .list p span{
+    font-weight: bold;
+    float: left;
+    border-bottom: 1px solid #3EAF0E;
+}
+#right .list p span b {
+    font-weight: normal;
+    color: #888888;
+}
+#right .list p a{
+    color: #888888;
+    float: right;
+    font-family: "宋体";
+}
+#right table {
+    width: 710px;
+    height: auto;
+    overflow: hidden;
+}
+#right table tr {
+    border-bottom: 1px dotted #F0F0F0;
+}
+#right table tr th {
+    padding: 10px 0;
+    text-align: center;
+}
+#right table tr td {
+    padding: 10px 0;
+    text-align: center;
+    width: 100px;
+    color: #888888;
+}
+#right table tr .t1 {
+    width: 528px;
+    text-align: left;
+}
+#right table tr .t3 {
+    text-align: right;
+}
+#right table tr .cons {
+    font-family: SimSun;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+#right table .page {
+    border: none;
+}
+#right table .page td{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#right .ask-filter {
+    width: 710px;
+    height: 36px;
+    border-bottom: 1px solid #E0E0E0;
+    margin: 10px 0;
+}
+#right .ask-filter li {
+    float: left;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    color: #007AD0;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+#right .ask-filter .cur {
+    width: 98px;
+    height: 35px;
+    line-height: 34px;
+    border: 1px solid #E0E0E0;
+    border-bottom-color: #fff;
+    color: #333333;
+    font-weight: bold;
+    cursor: default;
+}
+#right .ask-filter .cur a{
+    color: #333;
+}
+#right .lv-info {
+    width: 710px;
+    height: 36px;
+    line-height: 36px;
+    text-align: left;
+    font-size: 14px;
+}
+#right .lv-info span {
+    color: #FF6600;
+}
+#right .lv-rule{
+    width: 710px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+#right .lv-rule p {
+    width: 710px;
+    height: 24px;
+    line-height: 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+#right .lv-rule p span{
+    display: block;
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+    border-bottom: 1px solid #3EAF0E;
+    font-weight: bold;
+}
+#right .lv-exp {
+    margin: 20px 0;
+    
+}
+#right .lv-exp th{
+    padding: 5px 0;
+    border: 1px solid #E0E0E0;
+    background: #F8F8F8;
+}
+#right .lv-exp td {
+    padding: 5px 0;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    color: #333333;
+}
+#right .lv-exp td span{
+    color : #FF7C00;
+}
+#right .lv-exp .cur{
+    background: #FFFEF1;
+    font-weight: bold;
+}

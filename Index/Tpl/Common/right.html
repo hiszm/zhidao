@@ -1,0 +1,100 @@
+<div id='right'>
+
+	<if value="isset($_SESSION['username']) && isset($_SESSION['uid'])">
+		<div class='userinfo'>
+			<dl>
+				<dt>
+					<a href="{|U('Member/index',array('uid'=>$_SESSION['uid']))}"><img src="{$userInfo.face}" width='48' height='48' alt="占位符"/></a>
+				</dt>
+				<dd class='username'>
+					<a href="{|U('Member/index',array('uid'=>$_SESSION['uid']))}">
+						<b>{$hd_session.username}</b>
+					</a>
+					<a href="">
+						<i class='level lv{$userInfo.lv}' title='Level {$userInfo.lv}'></i>
+					</a>
+				</dd>
+				<dd>金币：<a href="" style="color: #888888;"><b class='point'>{$userInfo.point}</b></a></dd>
+				<dd>经验值：{$userInfo.exp}</dd>
+			</dl>
+			<table>
+				<tr>
+					<td>回答数</td>
+					<td>采纳率</td>
+					<td class='last'>提问数</td>
+				</tr>
+				<tr>
+					<td><a href="">{$userInfo.answer}</a></td>
+					<td><a href="">{$userInfo.ratio}%</a></td>
+					<td class='last'><a href="">{$userInfo.ask}</a></td>
+				</tr>
+			</table>
+			<ul>
+				<li><a href="">我提问的</a></li>
+				<li><a href="">我回答的</a></li>
+			</ul>
+		</div>
+		<else/>
+			<div class='r-login'>
+				<span class='login'><i></i>&nbsp;登录</span>
+				<span class='register'><i></i>&nbsp;注册</span>
+			</div>
+		</if>
+	<div class='clear'></div>
+	<div class='star'>
+		<p class='title'>认知之星</p>
+		<span class='star-name'>本日回答问题最多的人</span>
+			<if value="!empty($eveStar)">
+				<div class='star-info'>
+					<div>
+						<a href="{|U('Member/index',array('uid'=>$eveStar['uid']))}" class='star-face'>
+							<img src="{$eveStar.face}" width='48px' height='48px' alt="头像站位"/>
+						</a>
+						<ul>
+							<li><a href="{|U('Member/index',array('uid'=>$eveStar['uid']))}" >{$eveStar.username}</a></li>
+							<i class='level lv{$eveStar.lv}' title='Level {$eveStar.lv}'></i>
+						</ul>
+					</div>
+					<ul class='star-count'>
+						<li>回答数：<span>{$eveStar.answer}</span></li>
+						<li>采纳率：<span>{$eveStar.ratio}%</span></li>
+					</ul>
+				</div>
+			</if>
+		<span class='star-name'>历史回答问题最多的人</span>
+		<if value="!empty($hisStar)">
+			<div class='star-info'>
+				<div>
+					<a href="{|U('Member/index',array('uid'=>$hisStar['uid']))}"  class='star-face'>
+						<img src="{$hisStar.face}" width='48px' height='48px' alt="头像站位"/>
+					</a>
+					<ul>
+						<li><a href="{|U('Member/index',array('uid'=>$hisStar['uid']))}">{$hisStar.username}</a></li>
+						<i class='level lv{$hisStar.lv}' title='Level {$hisStar.lv}'></i>
+					</ul>
+				</div>
+				<ul class='star-count'>
+					<li>回答数：<span>{$hisStar.answer}</span></li>
+					<li>采纳率：<span>{$hisStar.ratio}%</span></li>
+				</ul>
+				</div>
+			</div>
+		</if>
+	<div class='star-list'>
+		<p class='title'>认知助人光荣榜</p>
+		<div>
+			<ul class='ul-title'>
+				<li>用户名</li>
+				<li style='text-align:right;'>帮助过的人数</li>
+			</ul>
+			<ul class='ul-list'>
+			<list from='$helper' name="n">
+				<li>
+					<a href="{|U('Member/index',array('uid'=>$n['uid']))}"><i class='rank r{$hd.list.n.index}'></i>{$n.username}</a>
+					<span>{$n.accept}</span>
+				</li>
+			</list>		
+			</ul>
+		</div>
+	</div>
+</div>

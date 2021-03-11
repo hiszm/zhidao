@@ -1,0 +1,55 @@
+<div id='left'>
+		<div class='userinfo'>
+			<dl>
+				<dt>
+					<a href="{|U('Member/index',array('uid'=>$_GET['uid']))}"><img src="{$member.face}" width='48' height='48' alt="占位符"/></a>
+				</dt>
+				<dd class='username'>
+					<a href="{|U('Member/index',array('uid'=>$_GET['uid']))}"><b>{$member.username}</b>
+					</a>
+					<a href="">
+						<i class='level lv{$member.lv}' title='Level {$member.lv}'></i>
+					</a>
+				</dd>
+				<dd>金币：<a href="" style="color: #888888;"><b class='point'>{$member.point}</b></a></dd>
+				<dd>经验值：{$member.exp}</dd>
+			</dl>
+			<table>
+				<tr>
+					<td>回答数</td>
+					<td>采纳率</td>
+					<td class='last'>提问数</td>
+				</tr>
+				<tr>
+					<td><a href="">{$member.answer}</a></td>
+					<td><a href="">{$member.ratio}%</a></td>
+					<td class='last'><a href="">{$member.ask}</a></td>
+				</tr>
+			</table>
+		</div>
+
+	<ul>
+		<li class='myhome <if value="METHOD eq 'index'">cur</if>'>
+			<a href="{|U('Member/index',array('uid'=>$_GET['uid']))}">{$rank}的首页</a>
+		</li>
+		<li class='myask <if value="METHOD eq 'my_ask'">cur</if>'>
+			<a href="{|U('Member/my_ask',array('uid'=>$_GET['uid']))}">{$rank}的提问</a>
+		</li>
+		<li class='myanswer <if value="METHOD eq 'my_answer'">cur</if>'>
+			<a href="{|U('Member/my_answer',array('uid'=>$_GET['uid']))}">{$rank}的回答</a>
+		</li>
+		<li class='mylevel <if value="METHOD eq 'my_level'">cur</if>'>
+			<a href="{|U('Member/my_level',array('uid'=>$_GET['uid']))}">{$rank}的等级</a>
+		</li>
+		<li class='mygold <if value="METHOD eq 'my_point'">cur</if>'>
+			<a href="{|U('Member/my_point',array('uid'=>$_GET['uid']))}">{$rank}的金币</a>
+		</li>
+		<if value="$hd.session.uid eq $hd.get.uid">
+			<li class='myface <if value="METHOD eq 'my_face'">cur</if>'>
+				<a href="{|U('Member/my_face',array('uid'=>$_GET['uid']))}">上传头像</a>
+			</li>
+		</if>
+
+		<li style="background:none"></li>
+	</ul>
+</div>

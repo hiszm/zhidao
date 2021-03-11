@@ -1,0 +1,58 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/member.css" />
+	<script type="text/javascript" src='./Index/Tpl/Public/Js/member.js'></script>
+</head>
+<body>
+	<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+<!--------------------中部-------------------->
+	<div id='center'>
+<!-- 左侧 -->
+	<load file="./Index/Tpl/Common/left.html">
+<!-- 左侧结束 -->
+		<div id='right'>
+			<p class='title'>我的金币</p>
+			<p class='lv-info'>
+				<if value="$member['point'] eq 0">
+					您还没有金币，赶紧向着高富帅去奋斗吧！
+				<else/>
+					您现有金币<span>{$member.point}</span>
+				</if>
+			</p>
+			<div class='lv-rule'>
+				<p><span>金币获取</span></p>
+				<table class='lv-exp'>
+					<tr>
+						<th>操作</th>
+						<th>获得金币</th>
+					</tr>
+					<tr>
+						<td>回答</td>
+						<td>+{|C('GOLD_ANSWER')}金币</td>
+					</tr>
+					<tr>
+						<td>回答被采纳</td>
+						<td>+{|C('GOLD_ACCEPT')}金币</td>
+					</tr>
+					<tr>
+						<td>回答被删除：</td>
+						<td>-{|C('GOLD_DEL_ANSWER')}金币</td>
+					</tr>
+					<tr>
+						<td>提问被删除：</td>
+						<td>-{|C('GOLD_DEL_ASK')}金币</td>
+					</tr>
+					<tr>
+						<td>采纳回答被删除</td>
+						<td>提问者：-{|C('GOLD_DEL_ASK')}金币&nbsp;&nbsp;回答者：-{|C('GOLD_DEL_ANSWER')}金币</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+<!--------------------中部结束-------------------->
+<!-- 底部 -->
+	<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

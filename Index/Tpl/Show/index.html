@@ -1,0 +1,127 @@
+	<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/question.css" />
+	<script type="text/javascript" src="./Index/Tpl/Public/Js/question.js"></script>
+</head>
+<body>
+<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top 结束-->
+	<div id='location'>
+		<a href="{|U('List/index', array('cid'=>0))}">全部分类</a>
+			<list from="$fatherCate" name="n">
+				<if value="!$hd.list.n.last">
+				&gt;&nbsp;<a href="{|U('List/index', array('cid'=>$n['cid']))}">{$n.title}</a>&nbsp;&nbsp;
+				<else/>
+				&gt;&nbsp;{$n.title}&nbsp;&nbsp;
+				</if>
+			</list>
+	</div>
+
+<!--------------------中部-------------------->
+	<div id='center-wrap'>
+		<div id='center'>
+			<div id='left'>
+				<div id='answer-info'>
+					<!-- 如果没有解决用wait -->
+					<div class='ans-state <if value="$ask['solve'] eq 0">wait</if>'></div>
+					<div class='answer'>
+						<p class='ans-title'>{$ask.content}
+							<b class='point'>{$ask.reward}</b>
+						</p>
+					</div>
+					<ul>
+						<li><a href="">{$ask.username}</a></li>
+						<li><i class='level lv{$lv}' title='Level {$lv}'></i></li>
+						<li>{$ask.time|date: 'Y-m-d',@@}</li>
+				
+					</ul>
+
+
+					<if value="isset($_SESSION['username']) && isset($_SESSION['uid']) && $ask['solve'] eq 0 && $_SESSION['uid'] neq $ask['uid']">
+								<div class='ianswer'>
+									<form action="{|U('answer')}" method='POST'>
+										<p>我来回答</p>
+										<textarea name="content"></textarea>
+										<input type="hidden" name='asid' value='{$hd.get.asid}'>
+										<input type="submit" value='提交回答' id='anw-sub'/>
+									</form>
+								</div>
+
+					</if>
+					
+					<if value="{$ask.solve eq 1}">
+					<!-- 满意回答 -->
+						<div class='ans-right'>
+							<p class='title'><i></i>满意回答<span></span></p>
+							<p class='ans-cons'>{$answerOk.content}</p>
+							<dl>
+								<dt>
+									<a href=""><img src="{$faceOk}" width='48' height='48'/></a>
+								</dt>
+								<dd>
+									<a href="">{$answerOk.username}</a>
+								</dd>
+								<dd><i class='level lv{$lvOk}'></i></dd>
+								<dd>{$ratio}%</dd>
+							</dl>
+						</div>
+						<!-- 满意回答 -->
+					</if>
+				</div>
+
+					<div id='all-answer'>
+					<div class='ans-icon'></div>
+					<p class='title'>共 <strong>{$count}</strong> 条回答</p>
+					<ul>
+						<list from="$answer" name="n">
+							<li>
+								<div class='face'>
+									<a href="{|U('Member/index',array('uid'=>$n['uid']))}">
+
+										<img src="{$n.face}" width='48' height='48'/>
+									</a>
+									<a href="{|U('Member/index',array('uid'=>$n['uid']))}">{$n.username}</a>
+								</div>
+								<div class='cons blue'>
+									<p>{$n.content}<span style='color:#888;font-size:12px'>&nbsp;&nbsp;({$n.time|date:'Y-m-d', @@})</span></p>
+								</div>
+								<if value="{$hd.session.uid} eq $ask['uid'] && $ask['solve'] eq 0">
+									<a href="{|U('accept', array('anid'=>$n[anid], 'asid'=>$n['asid']))}" class='adopt-btn'>采纳</a>
+								</if>
+							</li>
+						</list>
+
+					</ul>
+					<div class='page'>
+						{$page}
+					</div>
+				</div>
+
+
+				<div id='other-ask'>
+					<p class='title'>待解决的相关问题</p>
+					<table>
+						<list from="$alike" name="n">
+							<tr>
+								<td class='t1'><a href="">{$n.content}</a></td>
+								<td>{$n.answer}&nbsp;回答</td>
+								<td>{$n.time|date:'Y-m-d'}</td>
+							</tr>
+						</list>
+					</table>
+				</div>
+			</div>
+<!-- 右侧 -->
+<load file="./Index/Tpl/Common/right.html">
+<!-- ---右侧结束---- -->
+			
+		</div>
+
+	</div>
+	
+<!--------------------中部结束-------------------->
+
+<!-- 底部 -->
+	<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

@@ -1,0 +1,149 @@
+
+#center {
+	width: 980px;
+	height: auto;
+	overflow: hidden;
+	margin: 10px auto;
+}
+#left {
+	width: 750px;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	text-align: left;
+}
+#cate-list {
+	width: 748px;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #E0E0E0;
+	background: url(../Images/list-title.png) repeat-x;
+}
+#cate-list .title {
+	width: 748px;
+	height: 40px;
+	line-height: 40px;
+	color: #888888;
+	background: url(../Images/point.png) no-repeat 13px 29px;
+	text-indent: 2em;
+	font-weight: bold;
+}
+#cate-list ul {
+	width: 720px;
+	height: auto;
+	overflow: hidden;
+	margin-left: 28px;
+	margin-bottom: 20px;
+}
+#cate-list ul li {
+	width: 240px;
+	height: 34px;
+	line-height: 34px;
+	float: left;
+}
+#cate-list ul li a {
+	font-family: Tahoma;
+    font-size: 14px;
+}
+#answer-list {
+	width: 748px;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #E0E0E0;
+	margin-top: 10px;
+	background: url(../Images/answer-list.png) repeat-x;
+}
+#answer-list .ans-sel {
+	width: 728px;
+	height: 34px;
+	border-bottom: 1px solid #E0E0E0;
+	padding-left: 20px;
+}
+#answer-list .ans-sel li {
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	padding: 0 20px;
+	background: url(../Images/list-r.png) no-repeat right;
+}
+#answer-list .ans-sel .last{
+	background: none;
+}
+#answer-list .ans-sel .on {
+	background: #fff;
+	border: 1px solid #E0E0E0;
+	border-top:none;
+	border-bottom: none;
+	font-weight: bold;
+	font-size: 14px;
+	border-radius: 4px;
+}
+#answer-list .ans-sel .on a {
+	color: #333333;
+}
+#answer-list .ans-sel li a{
+	font-size: 14px;
+	color: #0063C8;
+}
+#answer-list table {
+	width: 728px;
+	height: auto;
+	overflow: hidden;
+	margin: 5px 10px;
+}
+#answer-list table tr {
+	border-bottom: 1px dotted #F0F0F0;
+}
+#answer-list table tr th {
+	padding: 5px 0;
+	text-align: center;
+}
+#answer-list table tr td {
+	padding: 10px 0;
+	text-align: center;
+	width: 100px;
+	color: #888888;
+}
+#answer-list table tr .t1 {
+	width: 528px;
+	text-align: left;
+}
+#answer-list table tr .cons {
+	font-family: SimSun;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+#answer-list table tr td a b {
+	font-size: 12px;
+	color: #ff6600;
+	display: inline-block;
+    width: 24px;
+    height: 28px;
+    line-height: 28px;
+    background: url(../Images/back.png) no-repeat -540px -45px;
+    padding: 0 5px;
+    text-indent: 0;
+    text-align: right;
+    font-weight: normal;
+}
+#answer-list table .page {
+	border: none;
+}
+#answer-list table .page td{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+#answer-list table .page strong{
+	margin-left: 3px;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+}
+#answer-list table .page a{
+	margin-left: 3px;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+
+}

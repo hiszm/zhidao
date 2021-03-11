@@ -1,0 +1,57 @@
+<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="__PUBLIC__/Css/member.css" />
+	<script type="text/javascript" src='__PUBLIC__/Js/member.js'></script>
+</head>
+<body>
+	<!-- top -->
+	<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+<!--------------------中部-------------------->
+	<div id='center'>
+<!-- 左侧 -->
+<load file="./Index/Tpl/Common/left.html">
+<!-- 左侧结束 -->
+		<div id='right'>
+			<p class='title'>{$rank}的回答</p>
+			<ul class='ask-filter'>
+				<li <if value="$_GET['w'] neq 1">class='cur'</if>><a href="{|U('my_answer', array('uid'=>$_GET['uid']))}">全部回答</a></li>
+				<li <if value="$_GET['w'] eq 1">class='cur'</if>><a href="{|U('my_answer', array('uid'=>$_GET['uid'], 'w'=>1))}">被采纳的回答</a></li>
+			</ul>
+			<div class='list list-filter'>
+				<table>
+					<if value="empty($answer)">
+						<tr height='140'>
+							<if value="$_GET['w'] neq 1">
+								<td>{$rank}还没有回答过问题</td>
+							<else/>
+								<td>{$rank}还没有被采纳的回答</td>
+							</if>
+						</tr>
+					<else/>
+						<tr>
+							<th class='t1'>标题</th>
+							<th>回答</th>
+							<th class='t3'>更新时间</th>
+						</tr>
+						<list from="$answer" name="n">
+							<tr>
+								<td class='t1'>
+									<a href="{|U('Show/index', array('asid'=>$n['asid'], 'cid'=>$n['cid']))}">{$n.content}</a><span>[{$n.title}]</span>
+								</td>
+								<td>{$n.answer}</td>
+								<td class='t3'>{$n.time|date:'Y-m-d', @@}</td>
+							</tr>	
+						</list>
+						<tr>
+							<td>{$page}</td>
+						</tr>
+					</if>
+				</table>
+			</div>
+		</div>
+	</div>
+<!--------------------中部结束-------------------->
+<!-- 底部 -->
+<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

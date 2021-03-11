@@ -1,0 +1,101 @@
+
+	<load file="./Index/Tpl/Common/head.html">
+
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/index.css" />
+	<script type="text/javascript" src='./Index/Tpl/Public/Js/index.js'></script>
+
+</head>
+</head>
+<body>
+<!-- top -->
+<load file="./Index/Tpl/Common/top.html">
+<!-- top -->
+	<div class='main'>
+		<div id='left'>
+			<p class='left-title'>所有问题分类</p>
+			<ul class='left-list'>
+				<list from="$cate" name="n">
+					<li class='list-l1'>
+						<div class='list-l1-wrap'>
+							<h4><a href="{|U('List/index',array('cid'=>$n['cid']))}">{$n.title}</a></h4>
+							<ul class='list-l2'>
+								<list from="$n['down']" name="v" row="3">
+									<li><a href="{|U('List/index',array('cid'=>$v['cid']))}">{$v.title}</a></li>
+								</list>
+							</ul>
+						</div>
+
+						<div class='list-more hidden'>
+							<ul>
+							<list from="$n['down']" name="v" start="4">
+								<li><a href="{|U('List/index',array('cid'=>$v['cid']))}">{$v.title}</a></li>
+							</list>
+							</ul>
+						</div>
+					</li>
+				</list>
+			</ul>
+		</div>
+
+		<div id='center'>
+			<div id='animate'>
+				<div class='imgs-wrap'>
+					<ul>
+						<li>
+							<a href=""><img src="./Index/Tpl/Public/Images/animate1.jpg" width='558' height='190'/></a>
+						</li>
+						<li>
+							<a href=""><img src="./Index/Tpl/Public/Images/animate2.jpg" width='558' height='190'/></a>
+						</li>
+						<li>
+							<a href=""><img src="./Index/Tpl/Public/Images/animate3.jpg" width='558' height='190'/></a>
+						</li>
+					</ul>
+				</div>
+				<ul class='ani-btn'>
+					<li class='ani-btn-cur'>问答<i></i></li>
+					<li>solution<i></i></li>
+					<li style='border:none'>黑人问号<i></i></li>
+				</ul>
+			</div>
+
+			<dl class='answer-list'>
+				<dt>
+					<span class='wait-as'>待解决问题</span>
+					<a href='{|U("List/index", array("cid"=>0))}'>更多>></a>
+				</dt>
+				<list from="$noSolveL" name="n">
+						<dd>
+							
+								<a href="{|U('Show/index',array('asid'=>$n['asid'],'cid'=>$n['cid']))}">{$n.content}</a>
+								<span>{$n.answer}回答</span>
+						
+						</dd>
+				</list>
+				
+			</dl>
+
+			<dl class='answer-list'>
+				<dt>
+					<span class='reward-as'>高分悬赏问题</span>
+					<a href='{|U('List/index', array('cid'=>0, 'where'=>2))}'>更多>></a>
+				</dt>
+				<list from="$noSolveH" name="n">
+					<dd>
+						<a href="{|U('Show/index',array('asid'=>$n['asid'],'cid'=>$n['cid']))}"><b>{$n.reward}</b>{$n.content}</a>
+						<span>{$n.answer}</span>
+					</dd>
+				</list>
+				
+			</dl>
+		</div>
+<!-- 右侧 -->
+<load file="./Index/Tpl/Common/right.html">		
+<!-- ---右侧结束---- -->
+	</div>
+<!--------------------内容主体结束-------------------->
+	<div class='clear'></div>
+	
+<!-- 底部 -->
+	<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

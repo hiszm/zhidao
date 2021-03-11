@@ -1,0 +1,88 @@
+	<load file="./Index/Tpl/Common/head.html">
+	
+	<link rel="stylesheet" href="./Index/Tpl/Public/Css/ask.css" />
+	<script type="text/javascript">
+	var on= false;
+	var point=0;
+	on=<if value="isset($_SESSION['username']) && isset($_SESSION['uid'])">
+		point={$point};
+		true
+
+		<else/>
+		false
+		</if>
+
+	</script>
+	<script type="text/javascript" src='./Index/Tpl/Public/Js/ask.js'></script>
+</head>
+<body>
+<!-- top -->
+		<load file="./Index/Tpl/Common/top.html">
+<!-- top结束 -->
+	<div id='location'>
+		<a href="">认知问答</a>&nbsp;>&nbsp;提问
+	</div>
+
+<!--------------------中部-------------------->
+	<div id='center'>
+		<div class='send'>
+			<div class='title'>
+				<p class='left'>向亿万网友们提问</p>
+				<p class='right'>您还可以输入<span id='num'>50</span>个字</p>
+			</div>
+			<form action="{|U('sub_ask')}" method='post'>
+				<div class='cons'>
+					<textarea name="content"></textarea>
+				</div>
+				<div class='reward'>
+					<span id='sel-cate' class='cate-btn'>选择分类</span>
+					<ul>
+						<li>
+							我的金币：<span>{$point}</span>
+						</li>
+						<li>
+					  悬赏：<select name="reward">
+								<option value="0">0</option>
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option value="15">15</option>
+								<option value="20">20</option>
+								<option value="30">30</option>
+								<option value="50">50</option>
+								<option value="80">80</option>
+								<option value="100">100</option>
+							</select>金币
+						</li>
+					</ul>
+				</div>
+				<input type='hidden' name='cid' value='0'/>
+				<input type="submit" value='提交问题' class='send-btn'/>
+			</form>
+		</div>
+	</div>
+	<div id='category'>
+		<p class='title'>
+			<span>请选择分类</span>
+			<a href="" class='close-window'></a>
+		</p>
+		<div class='sel'>
+			<p>为您的问题选择一个合适的分类：</p>
+			<select name="cate-one" size='16' >
+				 <list from="$topCate" name="n">   
+	<!-- $topCate 切记变量名一定要加$否则 后果很难调试 -->
+
+					<option value="{$n.cid}">{$n.title}</option>
+				</list> 
+			</select>
+			<select name="cate-one" size='16' class='hidden'></select>
+			<select name="cate-one" size='16' class='hidden'></select>
+		</div>
+		<p class='bottom'>
+			<span id='ok'>确定</span>
+		</p>
+	</div>
+<!--------------------中部结束-------------------->
+
+<!-- 底部 -->
+		<load file="./Index/Tpl/Common/foot.html">
+<!-- 底部结束 -->

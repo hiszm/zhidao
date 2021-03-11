@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	<link rel="stylesheet" href="./Admin/Tpl/Public/Css/public.css" />
+	<script type="text/javascript" src="./Admin/Tpl/Public/Js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./Admin/Tpl/Public/Js/public.js"></script>	
+</head>
+
+<body>
+	<table class="table">
+		<tr>
+			<td class="th" colspan="20">用户列表</td>
+		</tr>
+		<tr class="tableTop">
+			<td class="tdLittle1">ID</td>
+			<td>用户名</td>
+			<td>回答数</td>
+			<td>被采纳数</td>
+			<td>提问数</td>
+			<td>金币</td>
+			<td>经验</td>
+			<td>最后登录时间</td>
+			<td>最后登录IP</td>
+			<td>注册时间</td>
+			<td>帐号状态</td>
+			<td>操作</td>
+		</tr>
+		<list from="$user" name="n">
+			<tr>
+				<td>{$n.uid}</td>
+				<td>{$n.username}</td>
+				<td>{$n.answer}</td>
+				<td>{$n.accept}</td>
+				<td>{$n.ask}</td>
+				<td>{$n.point}</td>
+				<td>{$n.exp}</td>
+				<if value="$n['logintime'] eq 0">
+					<td>从未登录</td>
+				<else/>
+					<td>{$n.logintime|date:'Y-m-d', @@}</td>
+				</if>
+
+				<if value="$n['loginip'] eq ''">
+					<td>从未登录</td>
+				<else/>
+				<td>{$n.loginip}</td>
+				</if>
+
+				<td>{$n.restime|date:'Y-m-d', @@}</td>
+
+				<if value="$n['lock'] eq 1">
+					<td>锁定</td>
+				<else/>
+					<td>正常</td>
+				</if>
+				<td>
+					<if value="$n['lock'] eq 1">
+						<a href="{|U('User/unlock_user', array('uid'=>$n['uid']))}">解锁</a>
+					<else/>
+						<a href="{|U('User/lock_user', array('uid'=>$n['uid']))}">锁定</a>
+					</if>
+				</td>
+			</tr>
+		</list>
+	</table>
+
+</body>
+</html>
