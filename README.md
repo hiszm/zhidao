@@ -109,4 +109,5 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210310210943463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phbmtpbjY=,size_16,color_FFFFFF,t_70)
 
 
-
+GitHub网速较慢的话；关注公众号@孙中明  回复：6004 
+![](https://img-blog.csdnimg.cn/6036153f32f8492cb0b7239f3e187814.png)
